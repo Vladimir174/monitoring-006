@@ -23,7 +23,7 @@ receivers:
   - name: "telegram-notifications"
     telegram_configs:
       - api_url: "https://api.telegram.org"
-        bot_token: 6989490173:AAF_0zai5n4okYASWZpit8oYVAx89YAmWMQ
+        bot_token: 6989490173:AAF_0zai5n4okYASWZpit8oYVAx8900000mWMQ // fike
         chat_id: 396564262
         parse_mode: "HTML"
         send_resolved: true
