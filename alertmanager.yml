@@ -1,0 +1,32 @@
+global:
+  resolve_timeout: 1m
+
+route:
+  receiver: "default-receiver"
+
+  routes:
+    - receiver: "telegram-notifications"
+      match:
+        severity: "critical"
+
+receivers:
+  - name: "default-receiver"
+    email_configs:
+      - to: "magvaivladimir@gmail.com"
+        from: "magvaivladimir@gmail.com"
+        smarthost: "smtp.gmail.com:587"
+        auth_username: "magvaivladimir@gmail.com"
+        auth_password: "jqdo jcrl vzbo kkjc"
+        auth_identity: "magvaivladimir@gmail.com"
+        send_resolved: true
+
+  - name: "telegram-notifications"
+    telegram_configs:
+      - api_url: "https://api.telegram.org"
+        bot_token: 6989490173:AAF_0zai5n4okYASWZpit8oYVAx89YAmWMQ
+        chat_id: 396564262
+        parse_mode: "HTML"
+        send_resolved: true
+
+templates:
+  - "/etc/alertmanager/template/*.tmpl"
